@@ -4,7 +4,7 @@ const VynilDisc = mongoose.model('VynilDisc');
 
 module.exports = {
   async index(req, res) {
-    const { pate = 1} = req.query;
+    const { page = 1} = req.query;
     const discs = await VynilDisc.paginate({}, { page, limit: 5});
   
     return res.json(discs);
